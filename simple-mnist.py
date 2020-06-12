@@ -82,7 +82,12 @@ print(export_path)
 #### Setting up your tensor server model 
 ## apt-get install tensorflow-model-server
 #####################################################################
-
+# Serve up your model 
+# nohup tensorflow_model_server \
+#  --rest_api_port=8501 \
+#  --model_name=fashion_model \
+#  --model_base_path="${MODEL_DIR}" >server.log 2>&1
+#
 
 
 
