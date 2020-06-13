@@ -24,8 +24,15 @@ Next, run the following command from the command line after your install your te
 
 Run the following command to make a simple request to your smarter and well trained model. 
 
-python request.py
+#### python request.py
 
+
+Noticed that this is the default URL that we are posting our data into: 
+
+    requests.post('http://localhost:8501/v1/models/fashion_model:predict', data=data, headers=headers)
+
+Noticed the --model_name=fashion_model with the REST API /v1/models/fashion_model. :) 
+Yeap that's no coincidence. 
 
 ### Installing your server 
 
