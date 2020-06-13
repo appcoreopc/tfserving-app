@@ -16,9 +16,6 @@ Next, run the following command from the command line after your install your te
 
  Please take a look at your server.log to ensure everything is working well. 
 
- 
-
-
 If you have not install tensorflow run the following 2 commands below :- 
 
 ### To add a repo 
