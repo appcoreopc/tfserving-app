@@ -8,10 +8,9 @@ This will create a simple model, train and then save it, into /tmp/1.
 
 But when you server your app, make sure it is to /tmp and not /tmp/1
 
-
 #### Setting up your server
 
-Next, run the following command from the command line after your install your tensorflow-serving component via apt-get install.
+Next, run the following command from the command line after your install your tensorflow-serving component via apt-get install. Please note, 8501 is the default REST API port and 8500 is gRPC port.
 
 
  nohup tensorflow_model_server \
