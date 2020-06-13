@@ -1,17 +1,11 @@
 import sys
+import tensorflow as tf
+from tensorflow import keras
+import tempfile
+import os
 
 # Confirm that we're using Python 3
 assert sys.version_info.major is 3, 'Oops, not running Python 3. Use Runtime > Change runtime type'
-
-import tensorflow as tf
-from tensorflow import keras
-
-# Helper libraries
-import numpy as np
-import matplotlib.pyplot as plt
-import os
-import subprocess
-
 print('TensorFlow version: {}'.format(tf.__version__))
 
 
@@ -34,7 +28,7 @@ print('test_images.shape: {}, of {}'.format(test_images.shape, test_images.dtype
 
 
 model = keras.Sequential([
-  keras.layers.Conv2D(input_shape=(28,28,1), filters=8, kernel_size=3, 
+  keras.layers.Conv2D(input_shape=(28, 28, 1), filters=8, kernel_size=3, 
                       strides=2, activation='relu', name='Conv1'),
   keras.layers.Flatten(),
   keras.layers.Dense(10, activation=tf.nn.softmax, name='Softmax')
@@ -58,8 +52,6 @@ print('\nTest accuracy: {}'.format(test_acc))
 # and stored with the default serving key
 #####################################################################
 
-import tempfile
-
 MODEL_DIR = tempfile.gettempdir()
 version = 1
 export_path = os.path.join(MODEL_DIR, str(version))
@@ -79,15 +71,11 @@ print('\nSaved model:')
 print(export_path)
 
 #####################################################################
-#### Setting up your tensor server model 
-## apt-get install tensorflow-model-server
+# Setting up your tensor server model
+# apt-get install tensorflow-model-server
 #####################################################################
-# Serve up your model 
+# Serve up your model
 # nohup tensorflow_model_server \
 #  --rest_api_port=8501 \
 #  --model_name=fashion_model \
 #  --model_base_path="${MODEL_DIR}" >server.log 2>&1
-#
-
-
-
