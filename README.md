@@ -21,9 +21,14 @@ Next, run the following command from the command line after your install your te
 
  Please take a look at your server.log to ensure everything is working well. 
 
+### To make a simple request
+
+Run the following command to make a simple request to your smarter and well trained model. 
+
+python request.py
 
 
-Installing your server 
+### Installing your server 
 
  --------------------------------------------------------------------------
 
